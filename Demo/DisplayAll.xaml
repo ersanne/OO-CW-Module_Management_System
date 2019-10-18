@@ -1,0 +1,25 @@
+﻿<Window x:Class="Demo.DisplayAll"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BusinessObjects;assembly=BusinessObjects"
+        Title="DisplayAll" Height="300" Width="540.217">
+   
+    <Window.DataContext>
+        <local:Student/>
+    </Window.DataContext>
+
+
+    <Grid>
+        <DataGrid x:Name="displayDataGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Height="269" Width="532" AutoGenerateColumns="False" ItemsSource="{Binding}" HeadersVisibility="Column" CanUserAddRows="false">
+            <DataGrid.Columns>
+              <DataGridTextColumn Header="Matric" Binding="{Binding Matric}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="First Name" Binding="{Binding FName}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="Last Name" Binding="{Binding SName}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="BirthDate" Binding="{Binding BirthDate, StringFormat=d}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="Coursework Mark" Binding="{Binding CwMark}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="Exam Mark" Binding="{Binding ExamMark}" Width="*"></DataGridTextColumn>
+              <DataGridTextColumn Header="Total Mark" Binding="{Binding TotalMark}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
